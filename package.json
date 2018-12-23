@@ -1,0 +1,31 @@
+{
+  "name": "alfred-github-activity",
+  "version": "1.0.0",
+  "description": "Alfred workflow to fetch a github user's activity",
+  "main": "index.js",
+  "dependencies": {
+    "alfy": "^0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anshumanv/alfred-github-activity.git"
+  },
+  "keywords": [
+    "alfred",
+    "workflow",
+    "github",
+    "api",
+    "productivity",
+    "internet"
+  ],
+  "author": "anshumanv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anshumanv/alfred-github-activity/issues"
+  },
+  "homepage": "https://github.com/anshumanv/alfred-github-activity#readme"
+}
