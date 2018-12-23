@@ -1,11 +1,15 @@
 const alfy = require('alfy');
 
-alfy.fetch(`https://api.github.com/users/${alfy.input}/events?access_token=${process.env.access_token}`).then(data => {
-	const items =	data.map(x => ({
-			title: x.created_at,
-			subtitle: x.type,
-			arg: x.id
+(async () => {
+
+	const data = await alfy.fetch(`https://api.github.com/users/${alfy.input}/events?access_token=${process.env.access_token}`)
+	const items =	data.map(event => ({
+			title: `${event.type} - ${event.repo.name}`,
+			subtitle: `${event.payload.action} - ${event.created_at}`,
+			arg: event.actor.url
 		}));
+
 		// console.log(process.env.access_token)
-		console.log(items)
-});
+		// console.log(alfy.input, items, data)
+		alfy.output(items)
+	})();
