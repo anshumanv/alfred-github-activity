@@ -25,11 +25,11 @@
 	<key>createdby</key>
 	<string>anshumanv</string>
 	<key>description</key>
-	<string>Instant github activity</string>
+	<string>Fetch github activity by username</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>alfred-github-activity</string>
+	<string>github-activity</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -75,7 +75,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Activity loading</string>
+				<string>Fetching activity</string>
 				<key>script</key>
 				<string>./node_modules/.bin/run-node index.js "$1"</string>
 				<key>scriptargtype</key>
