@@ -6,15 +6,26 @@ determineArg = (event) => {
 	}	else if (['opened', 'closed', 'published'].includes(event.payload.action)) {
 		return (event.payload.pull_request || event.payload.issue || event.payload.release)['html_url']
 	} else if (['WatchEvent', 'DeleteEvent', 'CreateEvent', 'PublicEvent'].includes(event.type)) {
-		return `https://github.com/${event.repo.url.split('/').splice(4).join('/')}`
+		return `https://github.com/${event.repo.name}`
 	} else if (event.type === 'ForkEvent') {
 		return event.payload.forkee.html_url
 	} else if (event.type === 'PushEvent') {
-		return `https://github.com/${event.repo.url.split('/').splice(4).join('/')}/commits/${event.payload.head}`
+		return `https://github.com/${event.repo.name}/commits/${event.payload.head}`
 	} else {
 		// Temporary
 		return event.actor.url
 	}
+}
+
+determineAction = event => {
+	const { payload } = event
+	if (event.type === 'PushEvent') {
+		return payload.ref
+	} else if (event.type === 'ForkEvent') {
+		return 'Forked at'
+	} else if (['CreateEvent', 'DeleteEvent'].includes(event.type)) {
+		return `${payload.ref_type} - ${payload.ref}`
+	} else return payload.action
 }
 
 (async () => {
@@ -24,10 +35,12 @@ determineArg = (event) => {
 		// Determine the URL to open
 
 		const arg = determineArg(event)
+		const preSub = determineAction(event)
+		const actionTimestamp = new Date(event.created_at)
 
 		return {
 			title: `${event.type} - ${event.repo.name}`,
-			subtitle: `${event.payload.action} - ${event.created_at}`,
+			subtitle: `${preSub} - ${actionTimestamp}`,
 			arg
 		}});
 

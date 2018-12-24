@@ -35,7 +35,7 @@ $ npm install --global alfred-github-activity
 
 1. Open Alfred Preferences.
 2. Go to the Workflows tab.
-3. Select **alfred-github-activity**.
+3. Select **github-activity**.
 4. Open the variables panel by clicking the `Configure workflow and variables` [+] button on the right.
 5. Fill the values
     - `access_token` : Previously copied Now token
