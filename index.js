@@ -1,11 +1,18 @@
 const alfy = require('alfy');
 
 determineArg = (event) => {
-	if(event.payload.action === 'created') {
+	if (event.payload.action === 'created' || event.type === 'CommitCommentEvent') {
 		return event.payload.comment.html_url
-	}	else if(['opened', 'closed'].includes(event.payload.action)) {
+	}	else if (['opened', 'closed'].includes(event.payload.action)) {
 		return (event.payload.pull_request || event.payload.issue)['html_url']
+	} else if (event.type === 'WatchEvent') {
+		return event.repo.url
+	} else if (event.type === 'ForkEvent') {
+		return event.payload.forkee.html_url
+	} else if (event.type === 'PushEvent') {
+		return event.payload.commits.url
 	} else {
+		// Temporary
 		return event.actor.url
 	}
 }
