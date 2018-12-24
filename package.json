@@ -24,6 +24,11 @@
     "productivity",
     "internet"
   ],
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
   "author": "anshumanv",
   "license": "MIT",
   "bugs": {
