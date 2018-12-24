@@ -25,7 +25,7 @@ determineAction = event => {
 		return 'Forked at'
 	} else if (['CreateEvent', 'DeleteEvent'].includes(event.type)) {
 		return `${payload.ref_type} - ${payload.ref}`
-	} else return payload.action
+	} else return payload.action || ''
 }
 
 (async () => {
