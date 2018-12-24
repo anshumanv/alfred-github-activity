@@ -40,7 +40,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://github.com</string>
+				<string>{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -106,9 +106,9 @@
 		<key>4F87B484-1DD9-4091-9C7E-149258A6EFC5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>430</integer>
+			<integer>600</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>140</integer>
 		</dict>
 		<key>E64EAA6A-599E-4002-96C0-0692C185CF44</key>
 		<dict>
