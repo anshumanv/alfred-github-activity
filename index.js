@@ -6,11 +6,11 @@ determineArg = (event) => {
 	}	else if (['opened', 'closed', 'published'].includes(event.payload.action)) {
 		return (event.payload.pull_request || event.payload.issue || event.payload.release)['html_url']
 	} else if (['WatchEvent', 'DeleteEvent', 'CreateEvent', 'PublicEvent'].includes(event.type)) {
-		return `https://github.com/${event.repo.url.split('/').slice(4,6).join('/')}`
+		return `https://github.com/${event.repo.url.split('/').splice(4).join('/')}`
 	} else if (event.type === 'ForkEvent') {
 		return event.payload.forkee.html_url
 	} else if (event.type === 'PushEvent') {
-		return event.payload.commits.url
+		return `https://github.com/${event.repo.url.split('/').splice(4).join('/')}/commits/${event.payload.head}`
 	} else {
 		// Temporary
 		return event.actor.url
