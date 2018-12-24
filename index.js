@@ -41,7 +41,8 @@ determineAction = event => {
 		return {
 			title: `${event.type} - ${event.repo.name}`,
 			subtitle: `${preSub} - ${actionTimestamp}`,
-			arg
+			arg,
+			quicklookUrl: arg,
 		}});
 
 		// console.log(process.env.access_token)
