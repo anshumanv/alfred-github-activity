@@ -118,11 +118,6 @@
 			<integer>280</integer>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>access_token</key>
-		<string>139a1f3446fdca408390640705c2fd232b6455da</string>
-	</dict>
 	<key>version</key>
 	<string></string>
 	<key>webaddress</key>
