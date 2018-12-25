@@ -13,8 +13,12 @@
 <p align="center">An alfred workflow to get public activity of a github user</p>
 
 
-## Install
+## Demo
 
+<img src="./demo.png" align="center">
+
+
+## Install
 
 ```
 $ npm install --global alfred-github-activity
@@ -22,9 +26,10 @@ $ npm install --global alfred-github-activity
 
 *Requires [Node.js](https://nodejs.org) 4+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
+
 ## Configuration
 
-### Generate Now token
+### Generate GitHub token
 
 1. Create a new personal access token [here](https://github.com/settings/tokens/new).
 2. Add description and click on genreate.
@@ -38,7 +43,7 @@ $ npm install --global alfred-github-activity
 3. Select **github-activity**.
 4. Open the variables panel by clicking the `Configure workflow and variables` [+] button on the right.
 5. Fill the values
-    - `access_token` : Previously copied Now token
+    - `access_token` : Previously copied GitHub token
 6. Save
 
 
