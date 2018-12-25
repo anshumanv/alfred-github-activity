@@ -1,6 +1,6 @@
 {
   "name": "alfred-github-activity",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Alfred workflow to fetch a github user's activity",
   "main": "index.js",
   "dependencies": {
